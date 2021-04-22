@@ -1,3 +1,11 @@
+## Hacerca de este proyecto -- JugoMania
+
+se trate de un manejador de pedidos donde el cliente puede pedir diferentes productos, ya sean jugos o comadia etc.. y un proveedor con la ayuda de un panel de administrador podra ver los productos pedidos por los cientes, con su direccion, todo con login y registros, diferentes roles, todo personalizable, con futaras ideas de poder asignar un proveedor a un designado sector o comunidad, producto; segun el tipo de cliente, con un superadmin quien pueda controlar todo y anadir mas productos a la paginas, crear mas proveedores etc. graficos de ventas, pagos por la misma plataformas y muchas cosas mas que se me vallan ocurriendo
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
