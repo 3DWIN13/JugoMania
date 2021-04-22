@@ -4,8 +4,9 @@ se trate de un manejador de pedidos donde el cliente puede pedir diferentes prod
 
 --mas cosas--
 
-implementacion de notificaciones al telegran de un pedido al provedor y al superadmin, haci siempre esta enterado de los pedidos.
+*implementacion de notificaciones al telegran de un pedido al provedor y al superadmin, haci siempre esta enterado de los pedidos.
 
+*posibilidad de que el administrador pueda borrar la cuenta de un cliente o provedos y dejarlo baneado por email y direccion.
 
 
 
