@@ -83,118 +83,66 @@
 
   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
     <h1 class="display-4 fw-normal">JUGOS Y PRECIOS</h1>
-    <p class="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+    <p class="fs-5 text-muted">Elige y pide tu jugo al mejor precio</p>
   </div>
 
   <main>
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Enterprise</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>30 users included</li>
+              <li>15 GB of storage</li>
+              <li>Phone and email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Enterprise</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>30 users included</li>
+              <li>15 GB of storage</li>
+              <li>Phone and email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Enterprise</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>30 users included</li>
+              <li>15 GB of storage</li>
+              <li>Phone and email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
       
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <h2 class="display-6 text-center mb-4">Pide Tus Jugos</h2>
@@ -204,12 +152,13 @@
       <div class="col-md-6" >
         <div class="h-100 p-5 text-white bg-dark rounded-3">
          {{-- formulario de pedidos de los jugos --}}
+         <form name="FormularioJugo" action="" method="post">
           <div class="row">
-            <form name="FormularioJugo" action="" method="post">
+            
           <div class="col-md-6" style="padding-bottom: 5%">
-            <label for="validationCustom04" class="form-label">State</label>
+            <label for="validationCustom04" class="form-label">Jugo</label>
             <select name="validationCustom04" class="form-select" id="validationCustom04" required>
-              <option selected disabled value="">Choose...</option>
+              <option selected disabled value="">Elige...</option>
               <option value="1">MANZANA</option>
               <option value="2">UVA</option>
               <option value="3">MELOCOTON</option>
@@ -219,25 +168,26 @@
               Please select a valid state.
             </div>
           </div>
-          <div class="col-md-4" style="padding-bottom: 5%">
-            <label for="validationCustom05" class="form-label">Zip</label>
+          <div class="col-md-5" style="padding-bottom: 5%">
+            <label for="validationCustom05" class="form-label">Cantidad por unidad</label>
             <input type="number" name="validationCustom05" class="form-control" id="validationCustom05" required>
             <div class="invalid-feedback">
               Please provide a valid zip.
             </div>
           </div>
-          <div class="col-md-2" style="margin-top: 31px; padding-bottom: 5%">
+          <div class="col-md-1" style="margin-top: 31px; padding-bottom: 5%">
             <button type="button" onclick="elegir();" class="btn btn-outline-light" style="border-radius: 100%">+</button>
         </div>
-      </form>
-      </div>
+     
+      </div> 
+    </form>
           {{-- formulario de pedidos de los jugos FIN --}}
 
 
            {{-- vista de los jugos anadidos --}}
           <div class="col-md-12">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-              <span class="text-primary">Your cart</span>
+              <span class="text-primary">Tus Jugos seleccionados</span>
               <span class="badge bg-primary rounded-pill">3</span>
             </h4>
             <ul class="list-group mb-3">
@@ -247,28 +197,8 @@
                   <small class="text-muted">Brief description</small>
                 </div>
                 <span class="text-muted">$12</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                  <h6 class="my-0">Second product</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-                <span class="text-muted">$8</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                  <h6 class="my-0">Third item</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-                <span class="text-muted">$5</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between bg-light">
-                <div class="text-success">
-                  <h6 class="my-0">Promo code</h6>
-                  <small>EXAMPLECODE</small>
-                </div>
-                <span class="text-success">−$5</span>
-              </li>
+              </li> 
+             {{-- Total de los jugos --}}
               <li class="list-group-item d-flex justify-content-between">
                 <span>Total (USD)</span>
                 <strong>$20</strong>
