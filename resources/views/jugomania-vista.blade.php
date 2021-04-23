@@ -188,20 +188,16 @@
           <div class="col-md-12">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
               <span class="text-primary">Tus Jugos seleccionados</span>
-              <span class="badge bg-primary rounded-pill">3</span>
+              <span id="span_de_cantidad" class="badge bg-primary rounded-pill">0</span>
             </h4>
-            <ul class="list-group mb-3">
-              <li class="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                  <h6 class="my-0">Product name</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-                <span class="text-muted">$12</span>
-              </li> 
+            <ul id="listaJugo" class="list-group mb-3">
+             
+            </ul>
              {{-- Total de los jugos --}}
+             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between">
-                <span>Total (USD)</span>
-                <strong>$20</strong>
+                <span>Total (DO)</span>
+                <strong>$0</strong>
               </li>
             </ul>
           </div>
