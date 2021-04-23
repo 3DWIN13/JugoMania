@@ -163,6 +163,7 @@
               <option value="2">UVA</option>
               <option value="3">MELOCOTON</option>
               <option value="4">CEREZA  </option>
+              <option value="4">PERA  </option>
             </select>
             <div class="invalid-feedback">
               Please select a valid state.
