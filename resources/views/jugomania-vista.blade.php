@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{{ asset('js/funcion_lista.js ') }}"></script>
+    
 
 
     <!-- Bootstrap core CSS -->
@@ -326,7 +326,7 @@
   </footer>
 </div>
 
-
+<script src="{{ asset('js/funcion_lista.js ') }}"></script>
     
   </body>
 </html>
