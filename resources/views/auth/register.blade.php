@@ -19,7 +19,7 @@
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
-            <div>
+            <div class="mt-4">
                 <x-jet-label for="direccion" value="{{ __('Direccion') }}" />
                 <x-jet-input id="direccion" class="block mt-1 w-full" type="text" name="direccion" :value="old('direccion')" required autofocus autocomplete="direccion" />
             </div>
