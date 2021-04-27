@@ -1,3 +1,37 @@
+proyecto jugomania
+
+pagina web de pedidos de productos donde el usuario podra pedir los diferentes productos y esos pruductos se le mostraran al proveedor, mientras que el superadmin podra anadir mas productos y editar los precios y demas
+
+#Tareas#
+
+1-> vista principal donde apareceran los diferentes pruductos y sus precios alimentados de la base de datos y actualizados con el superadmin. 
+
+1.1-> tambien un apartado de pedidos, donde seleccionas tus diferentes pedidos y se anaden a una lista y cuando estes listo podras pedir
+
+1.2-> aparte que si el usuario sigue anadendo mas del mismo productos, solo subira la cantidad del mismo
+
+1.3-> tambiem podra eliminar antes de completar el proceso de pedir.
+
+1.4-> eso se mostrara a la tablas de los distribuidores donde tendran su direccion marcada
+
+---------------------------------------------------------------------------------------------------------  
+
+2-> ningun usurio puede pedir sin estar registrados, si el usuario no esta logeado al momento de pedir se le redirigira al area de login y cuando completa el logeo se completara el pedido.
+
+3->en la parte de registro el usuario debera poner su direccion.
+
+4-> la pagina tendra tres roles: cliente=>solo podran pedir y acceder a su configuracion de cuenta(profile);
+distribuidor=> accedera a un ponel de administracion y prodra ver los pedidos de los clientes y aceptarlos, y se le notificara por correo al cliente; superadmin=> podra editar los diferentes prooductos y su precio, podra ver los pedidos de los clientes y los que los distribuidores aceptaron, podra borrar cuentas tanto de clientes y proveedores, podra asignar roles de distribuidores  de superadmin, todo esto dentro del adminlte.
+
+5->notificacion por telegran a los distribuidores y superadmin de nuevos pedidos, y notificacion por correo a los pedidos aceptados a los clientes, al igual cuando un pedido es aceptado se le mostrara por telegran al superadmin.
+
+#FUTURAS ACTUALICACIONES#
+
+1-> pagos via la misma plataforma;
+
+2-> graficos de ventas
+
+
 ## Hacerca de este proyecto -- JugoMania
 
 se trate de un manejador de pedidos donde el cliente puede pedir diferentes productos, ya sean jugos o comadia etc.. y un proveedor con la ayuda de un panel de administrador podra ver los productos pedidos por los cientes, con su direccion, todo con login y registros, diferentes roles, todo personalizable, con futaras ideas de poder asignar un proveedor a un designado sector o comunidad, producto; segun el tipo de cliente, con un superadmin quien pueda controlar todo y anadir mas productos a la paginas, crear mas proveedores etc. graficos de ventas, pagos por la misma plataformas y muchas cosas mas que se me vallan ocurriendo
