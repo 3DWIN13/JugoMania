@@ -20,8 +20,8 @@
             </div>
 
             <div>
-                <x-jet-label for="name" value="{{ __('Direccion') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="direccion" :value="old('direccion')" required autofocus autocomplete="direccion" />
+                <x-jet-label for="direccion" value="{{ __('Direccion') }}" />
+                <x-jet-input id="direccion" class="block mt-1 w-full" type="text" name="direccion" :value="old('direccion')" required autofocus autocomplete="direccion" />
             </div>
 
             <div class="mt-4">

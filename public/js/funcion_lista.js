@@ -19,9 +19,12 @@ if (jugoselecionado==='Elige...'||cantidad==='') {
 anadirjugos.innerHTML += `<li class="list-group-item d-flex justify-content-between lh-sm">
 <div>
   <h6 class="my-0">`+jugoselecionado+`</h6>
-  
+ <button onclick="eliminate();" ><small class="text-muted">eliminar</small></button>
+ 
 </div>
+
 <span class="text-muted">`+cantidad+`</span>
+
 </li> `
 
 document.getElementById('span_de_cantidad').innerHTML =c++;
@@ -30,11 +33,15 @@ document.getElementById('span_de_cantidad').innerHTML =c++;
 
 }
 
-function eliminar_de_la_lista() {
+
+function eliminate() {
+  console.log("te fueite pal carajo");
+}
+
 
   
   
-}
+
     // your page initialization code here
     // the DOM will be available here
  
