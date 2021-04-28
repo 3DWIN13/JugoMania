@@ -24,6 +24,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::group(['middleware' => ['role:admin']], function (){
     Route::get('/dashboard/productos', [ProductController::class, 'index'])->name('dashboard.productos');
+    Route::post('/dashboard/productos/store', [ProductController::class, 'store'])->name('dashboard.productos.store');
+    Route::put('/dashboard/productos/{id}/update', [ProductController::class, 'update'])->name('dashboard.productos.update');
+    Route::delete('/dashboard/productos/{id}/delete', [ProductController::class, 'destroy'])->name('dashboard.productos.delete');
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

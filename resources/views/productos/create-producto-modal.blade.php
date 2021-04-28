@@ -9,26 +9,26 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="{{route('dashboard.productos.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre del producto">
+                        <input type="text" class="form-control" name="nombre" id="nombre" value="{{old('nombre')}}" placeholder="Nombre del producto">
                     </div>
                     <div class="form-group">
                         <label for="precio">Precio</label>
-                        <input type="text" class="form-control" id="precio" placeholder="Another input placeholder">
+                        <input type="text" class="form-control" name="precio" id="precio" value="{{old('precio')}}" placeholder="Precio">
                     </div>
                     <div class="form-group">
                         <label for="descripcion">Descripcion</label>
-                        <input type="text" class="form-control" id="descripcion" placeholder="Another input placeholder">
+                        <input type="text" class="form-control" name="descripcion" id="descripcion" value="{{old('descripcion')}}" placeholder="Descripcion">
                     </div>
                     <div class="form-group">
                         <label for="imagen">Imagen</label>
-                        <input type="file" class="form-control-file" id="imagen">
+                        <input type="file" class="form-control-file" name="imagen" id="imagen">
                     </div>
                     <div class="modal-footer">
-                        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> --}}
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </form>
             </div>

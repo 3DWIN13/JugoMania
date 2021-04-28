@@ -1,12 +1,41 @@
 @extends('adminlte::page')
 
 @section('content_header')
+
+    @if(session('status'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('status') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="fas fa-times text-white"></i></span>
+        </button>
+    </div>
+    @endif
+
+    {{-- Verificando si hay algun error, si es true los devuelve todos --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times text-white"></i></span>
+            </button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <h1 class="d-inline">Productos</h1>
+    
     <!-- Button trigger modal -->
     <button type="button" class="ml-1 btn btn-primary" data-toggle="modal" data-target="#create-producto-modal">Nuevo producto</button>
 @endsection
 
 @section('content')
+
+{{-- Modal crear producto --}}
+@include('productos.create-producto-modal')
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -16,7 +45,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="productos" class="table table-bordered table-striped col-sm-12">
+                    <table id="productos" class="table table-bordered table-striped col-sm-12 col-md-12">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -28,21 +57,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Jugo de pera</td>
-                                <td>RD$ 35.00</td>
-                                <td>Jugo de pera natural con un toque de canela</td>
-                                <td><img src="" alt="Jugo de pera"></td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit-producto-modal">
-                                        Editar
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-producto-modal">
-                                        Eliminar
-                                    </button>
-                                </td>
-                            </tr>
+                            @foreach ($productos as $producto)
+                                <tr>
+                                    <td>{{$producto->id}}</td>
+                                    <td>{{$producto->nombre_p}}</td>
+                                    <td>RD$ {{$producto->precio_p}}</td>
+                                    <td>{{$producto->descripcion_p}}</td>
+                                    <td><img src="{{asset('storage/imagenes_p/' . $producto->imagen_p)}}" alt="{{$producto->nombre_p}}" width="100px" class="img-fluid img-thumbnail"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit-producto-modal-{{$producto->id}}">
+                                            Editar
+                                        </button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-producto-modal-{{$producto->id}}">
+                                            Eliminar
+                                        </button>
+                                    </td>
+                                </tr>
+                                @include('productos.edit-producto-modal')
+                                @include('productos.delete-producto-modal')
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
@@ -65,10 +98,6 @@
     <!-- /.row -->
 </div>
 
-{{-- Modal crear producto --}}
-@include('productos.create-producto-modal')
-@include('productos.edit-producto-modal')
-@include('productos.delete-producto-modal')
 @endsection
 
 @section('js')
