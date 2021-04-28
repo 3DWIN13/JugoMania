@@ -115,7 +115,7 @@ class ProductController extends Controller
             $request->file('imagen')->store('public/imagenes_p');
             $path = $request->file('imagen')->hashName();
         }else{
-            $path = "";
+            $path = $producto->imagen_p;
         }
 
         $producto->nombre_p = $validated['nombre'];
