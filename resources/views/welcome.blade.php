@@ -24,6 +24,33 @@
 
         @if (auth()->user()->hasRole('admin'))
             @extends('adminlte::page')
+            
+            @section('content')
+                <div class="row">
+                    <div class="col-lg-4">
+                        {{-- Minimal with title, text and icon --}}
+                        <div class="info-box">
+                            <span class="info-box-icon bg-info"><i class="fas fa-box"></i></span>
+                            <div class="info-box-content">
+                            <span class="info-box-text">Productos</span>
+                            <span class="info-box-number">{{count($productos)}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="info-box bg-success">
+                            <span class="info-box-icon"><i class="far fa-user"></i></span>
+                            <div class="info-box-content">
+                              <span class="info-box-text">Usuarios registrados</span>
+                              <span class="info-box-number">{{count($users)}}</span>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+            @endsection
+
         @elseif (auth()->user()->hasRole('cliente'))
             <x-app-layout>
                 <h1>Client view</h1>

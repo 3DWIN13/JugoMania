@@ -187,11 +187,11 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
-    'password_reset_url' => 'password/reset',
+    'password_reset_url' => 'user/profile',
     'password_email_url' => 'password/email',
     'profile_url' => false,
 
@@ -229,11 +229,11 @@ return [
         //     'search' => true,
         //     'topnav' => true,
         // ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+        // [
+        //     'text' => 'blog',
+        //     'url'  => 'admin/blog',
+        //     'can'  => 'manage-blog',
+        // ],
         [
             'text'        => 'Productos',
             'url'         => '/dashboard/productos',
@@ -248,7 +248,7 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'administrar Roles',
+            'text' => 'Administrar Roles',
             'url'  => '/dashboard/roles',
             'icon' => 'fas fa-fw fa-user-tag',
         ],
