@@ -206,7 +206,7 @@
                 <span id="span_de_cantidad" class="badge bg-primary rounded-pill">0</span>
               </h4>
               <ul id="listaJugo" class="list-group mb-3">
-
+{{--  los jugos anadidos --}}
               </ul>
               {{-- Total de los jugos --}}
               <ul class="list-group mb-3">

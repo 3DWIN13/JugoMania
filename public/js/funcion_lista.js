@@ -1,4 +1,5 @@
-var c = 1;
+var c = 0;
+var lista = 0;
 function elegir() {
    //console.log("hola mundoi");
 
@@ -10,20 +11,37 @@ console.log(cantidad);
 
 var anadirjugos = document.getElementById('listaJugo');
 
+var existe = !!document.getElementById(jugoselecionado);
+
 //validar juegos
 if (jugoselecionado==='Elige...'||cantidad==='') {
 
-  console.log('ahi no hay na pp')}else{
-//anadir juegos
+  console.log('ahi no hay na pp')}
+  
+  else if (existe==true) {
+     
+      
+    let lacantidad = document.getElementById('lacantidad').value;
 
-anadirjugos.innerHTML += `<li class="list-group-item d-flex justify-content-between lh-sm">
+    let suma = parseInt(lacantidad) +parseInt(cantidad)
+
+    lacantidad=suma;
+    console.log(lacantidad);
+    console.log('existe el diparate ezte ' + suma);
+  } else {
+    
+  
+//anadir juegos
+lista++;
+anadirjugos.innerHTML += `<li name="lista" id="lista_`+lista+`" class="list-group-item d-flex justify-content-between lh-sm">
 <div>
-  <h6 class="my-0">`+jugoselecionado+`</h6>
- <button onclick="eliminate();" ><small class="text-muted">eliminar</small></button>
+  <h6 id="`+jugoselecionado+`" class="my-0">`+jugoselecionado+`</h6>
+ <button onclick="eliminate(this);" id="lista_`+lista+`"> <small class="text-muted">eliminar</small></button>
  
 </div>
 
-<span class="text-muted">`+cantidad+`</span>
+<span  class="text-muted">`+cantidad+`</span>
+<input type="hidden" id="lacantidad" value="`+cantidad+`" />
 
 </li> `
 
@@ -34,9 +52,15 @@ document.getElementById('span_de_cantidad').innerHTML =c++;
 }
 
 
-function eliminate() {
-  console.log("te fueite pal carajo");
+function eliminate(b) {
+  console.log(b.id);
+  eleliminado = document.getElementById(b.id);
+  lalistaU = document.getElementById('listaJugo');
+  lalistaU.removeChild(eleliminado);
+  document.getElementById('span_de_cantidad').innerHTML =c-- ;
 }
+
+
 
 
   
