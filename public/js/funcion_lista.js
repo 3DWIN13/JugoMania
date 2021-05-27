@@ -1,5 +1,7 @@
-var c = 0;
+/*var c = 0;
 var lista = 0;
+var otro = 0;
+
 function elegir() {
    //console.log("hola mundoi");
 
@@ -13,21 +15,29 @@ var anadirjugos = document.getElementById('listaJugo');
 
 var existe = !!document.getElementById(jugoselecionado);
 
-//validar juegos
+
+
+//validar jUGOS
 if (jugoselecionado==='Elige...'||cantidad==='') {
 
   console.log('ahi no hay na pp')}
   
-  else if (existe==true) {
-     
-      
-    let lacantidad = document.getElementById('lacantidad').value;
+  else if (existe==true) {//si existe un ugo igual, solo se sumara la cantidad
+let suma = parseInt(cantidad);
 
-    let suma = parseInt(lacantidad) +parseInt(cantidad)
+/*do {
+  let acumula = prompt('anade un juguito: ');
+  suma += parseInt(acumula);
+} while (confirm('quieres seguir anadendo'));
+*/
+  /*suma += parseInt(cantidad);
 
-    lacantidad=suma;
-    console.log(lacantidad);
-    console.log('existe el diparate ezte ' + suma);
+    console.log("la cantidad que se va a sumar: "+cantidad);    
+    console.log('la suma de la cantidades: ' + suma);
+    
+
+
+    
   } else {
     
   
@@ -59,7 +69,7 @@ function eliminate(b) {
   lalistaU.removeChild(eleliminado);
   document.getElementById('span_de_cantidad').innerHTML =c-- ;
 }
-
+*/
 
 
 
@@ -68,4 +78,6 @@ function eliminate(b) {
 
     // your page initialization code here
     // the DOM will be available here
+
+    
  
