@@ -138,11 +138,11 @@
                   <label for="validationCustom04" class="form-label">Jugo</label>
                   <select name="validationCustom04" class="form-select" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
-                    <option value="1">MANZANA</option>
-                    <option value="2">UVA</option>
-                    <option value="3">MELOCOTON</option>
-                    <option value="4">CEREZA</option>
-                    <option value="5">PERAS</option>
+                    @foreach ($jugos as $item)
+                    <option value="1">{{$item->nombre_p}}</option>    
+                    @endforeach
+                    
+                    
                   </select>
                   <div class="invalid-feedback">
                     Please select a valid state.
