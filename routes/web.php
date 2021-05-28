@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('jugomania-vista');
-});
+});*/
+
+Route::resource('/', 'App\Http\Controllers\JugosController');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

@@ -24,6 +24,7 @@ class ProductController extends Controller
         return view('productos.index', [
             'productos' => $productos,
         ]);
+        
     }
 
     /**
