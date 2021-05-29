@@ -79,5 +79,68 @@ function eliminate(b) {
     // your page initialization code here
     // the DOM will be available here
 
-    
+const Ulista = document.getElementById('listaJugo');
+const templetaLista = document.getElementById('template-Lista').content
+const fragment = document.createDocumentFragment()
+let carrito={}
+
+const formulario_carrito = document.getElementById('FormularioJugo');
+formulario_carrito.addEventListener('click', e=>{
+  addcarrito(e) });
+
+ const addcarrito = e =>{
+  
+   if (e.target.classList.contains('btn-outline-light')) {
+    const select =  document.getElementById('validationCustom04');
+    const jugoselecionado =select.options[select.selectedIndex].text; 
+    const preciojugoYid = select.options[select.selectedIndex].value;
+    const split =  preciojugoYid.split('/')
+    const precio = split[0];
+    const id = split[1];
+    const cantidad = document.getElementById('validationCustom05').value;
+   // console.log(jugoselecionado+" : "+precio+ "id: "+id +" ==> "+cantidad)
+
+   if (jugoselecionado==='Elige...'||cantidad==='') {
+     console.log('salta un error de tienes que poner cantidad y elegir el jugo')
+   }else{
+    const compra = {
+      id:id,
+      Jugo:jugoselecionado,
+      cantidad: parseInt(cantidad),
+      precio:precio,
+      CantidadElementos:1
+    }
+
+    if (carrito.hasOwnProperty(compra.id)) {
+      compra.cantidad = carrito[compra.id].cantidad + parseInt(cantidad) 
+    }
+
+    carrito[compra.id] = { ...compra }
+
+    PintarElementosCarritos();
+   }
+    //console.log(carrito);
+    }
+  }
+    //e.stopPropagation()
+    //console.log(e.target.classList.contains('btn-outline-light'));
+  
+    const PintarElementosCarritos =() =>{
+      console.log(carrito)
+      Ulista.innerHTML=' ';
+      Object.values(carrito).forEach(items =>{
+        templetaLista.querySelector('h6').textContent = items.Jugo
+        templetaLista.querySelector('span').textContent = items.cantidad
+
+        const clone = templetaLista.cloneNode(true);
+        fragment.appendChild(clone)
+      });
+      Ulista.appendChild(fragment);
+    }
+  
  
+/*document.addEventListener('DOMContentLoaded', e=>{
+ console.log("cargo el documento")
+ addcarrito();
+})*/
+

@@ -131,7 +131,7 @@
         <div class="col-md-6">
           <div class="h-100 p-5 text-white bg-dark rounded-3">
             {{-- formulario de pedidos de los jugos --}}
-            <form name="FormularioJugo" action="" method="">
+            <form id="FormularioJugo" action="" method="">
               <div class="row">
 
                 <div class="col-md-6" style="padding-bottom: 5%">
@@ -139,7 +139,7 @@
                   <select name="validationCustom04" class="form-select" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
                     @foreach ($jugos as $item)
-                    <option value="1">{{$item->nombre_p}}</option>    
+                    <option value="{{$item->precio_p}}/{{ $item->id }}">{{$item->nombre_p}}</option>    
                     @endforeach
                     
                     
@@ -156,12 +156,13 @@
                   </div>
                 </div>
                 <div class="col-md-1" style="margin-top: 31px; padding-bottom: 5%">
-                  <button type="button" onclick="elegir();" class="btn btn-outline-light"
+                  <button type="button" value="" class="btn btn-outline-light"
                     style="border-radius: 100%">+</button>
                 </div>
 
               </div>
             </form>
+           
             {{-- formulario de pedidos de los jugos FIN --}}
 
 
@@ -192,6 +193,20 @@
 
 
   </div>
+
+<template id="template-Lista" >
+  <li name="lista" id="lista_`+lista+`" class="list-group-item d-flex justify-content-between lh-sm">
+    <div>
+      <h6 id="`+jugoselecionado+`" class="my-0">`+jugoselecionado+`</h6>
+     <button onclick="eliminate(this);" id="lista_`+lista+`"> <small class="text-muted">eliminar</small></button>
+     
+    </div>
+    
+    <span  class="text-muted">`+cantidad+`</span>
+    <input type="hidden" id="lacantidad" value="`+cantidad+`" />
+    
+    </li> 
+</template>
   </main>
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
