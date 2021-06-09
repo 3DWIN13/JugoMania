@@ -100,6 +100,7 @@
     <main>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 
+        {{-- se pintan todos los productos en la paginas con php --}}
         @foreach ($jugos as $item)
             
         
@@ -115,13 +116,15 @@
                   {{$item->descripcion_p}}
                 </p>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+              <button type="button" class="w-100 btn btn-lg btn-outline-primary">SELECCIONAR</button>
             </div>
           </div>
         </div>
 
       
         @endforeach
+
+        {{-- fin de la pintura --}}
       </div>
 
       <h2 class="display-6 text-center mb-4">Pide Tus Jugos</h2>
@@ -138,6 +141,7 @@
                   <label for="validationCustom04" class="form-label">Jugo</label>
                   <select name="validationCustom04" class="form-select" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
+                    {{-- se llenan las opciones con php --}}
                     @foreach ($jugos as $item)
                     <option value="{{$item->precio_p}}/{{ $item->id }}">{{$item->nombre_p}}</option>    
                     @endforeach
@@ -198,7 +202,7 @@
   <li name="lista" id="lista_`+lista+`" class="list-group-item d-flex justify-content-between lh-sm">
     <div>
       <h6 id="`+jugoselecionado+`" class="my-0">`+jugoselecionado+`</h6>
-     <button onclick="eliminate(this);" id="lista_`+lista+`"> <small class="text-muted">eliminar</small></button>
+      <button type="button" id="eliminar" class="btn-close" aria-label="Close"></button>
      
     </div>
     

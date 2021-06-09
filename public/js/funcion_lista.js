@@ -1,95 +1,23 @@
-/*var c = 0;
-var lista = 0;
-var otro = 0;
-
-function elegir() {
-   //console.log("hola mundoi");
-
- var select = document.getElementById('validationCustom04');
- var jugoselecionado = select.options[select.selectedIndex].text;
- console.log(jugoselecionado);
- var cantidad = document.getElementById('validationCustom05').value;
-console.log(cantidad);
-
-var anadirjugos = document.getElementById('listaJugo');
-
-var existe = !!document.getElementById(jugoselecionado);
-
-
-
-//validar jUGOS
-if (jugoselecionado==='Elige...'||cantidad==='') {
-
-  console.log('ahi no hay na pp')}
-  
-  else if (existe==true) {//si existe un ugo igual, solo se sumara la cantidad
-let suma = parseInt(cantidad);
-
-/*do {
-  let acumula = prompt('anade un juguito: ');
-  suma += parseInt(acumula);
-} while (confirm('quieres seguir anadendo'));
-*/
-  /*suma += parseInt(cantidad);
-
-    console.log("la cantidad que se va a sumar: "+cantidad);    
-    console.log('la suma de la cantidades: ' + suma);
-    
-
-
-    
-  } else {
-    
-  
-//anadir juegos
-lista++;
-anadirjugos.innerHTML += `<li name="lista" id="lista_`+lista+`" class="list-group-item d-flex justify-content-between lh-sm">
-<div>
-  <h6 id="`+jugoselecionado+`" class="my-0">`+jugoselecionado+`</h6>
- <button onclick="eliminate(this);" id="lista_`+lista+`"> <small class="text-muted">eliminar</small></button>
- 
-</div>
-
-<span  class="text-muted">`+cantidad+`</span>
-<input type="hidden" id="lacantidad" value="`+cantidad+`" />
-
-</li> `
-
-document.getElementById('span_de_cantidad').innerHTML =c++;
-
-}
-
-}
-
-
-function eliminate(b) {
-  console.log(b.id);
-  eleliminado = document.getElementById(b.id);
-  lalistaU = document.getElementById('listaJugo');
-  lalistaU.removeChild(eleliminado);
-  document.getElementById('span_de_cantidad').innerHTML =c-- ;
-}
-*/
-
-
-
-  
-  
 
     // your page initialization code here
     // the DOM will be available here
-
 const Ulista = document.getElementById('listaJugo');
 const templetaLista = document.getElementById('template-Lista').content
 const fragment = document.createDocumentFragment()
+const elnumerito = document.getElementById('span_de_cantidad')
 let carrito={}
-
 const formulario_carrito = document.getElementById('FormularioJugo');
-formulario_carrito.addEventListener('click', e=>{
-  addcarrito(e) });
 
+//usamos el evento de escucha y le pasomos el evento a los metodos
+formulario_carrito.addEventListener('click', e=>{addcarrito(e) });
+
+Ulista.addEventListener('click', e=>{EliminarElemento(e)} );
+
+//funcion de anadir el carrito
  const addcarrito = e =>{
   
+   //decimos = si el evento escucho algo del elemnto que tiene es clase entra en el if
+   // y optenemos todo del miniformulario del carrito la cantida, el prooducto y su id
    if (e.target.classList.contains('btn-outline-light')) {
     const select =  document.getElementById('validationCustom04');
     const jugoselecionado =select.options[select.selectedIndex].text; 
@@ -98,8 +26,10 @@ formulario_carrito.addEventListener('click', e=>{
     const precio = split[0];
     const id = split[1];
     const cantidad = document.getElementById('validationCustom05').value;
-   // console.log(jugoselecionado+" : "+precio+ "id: "+id +" ==> "+cantidad)
+  
 
+    //validamos para que no puede elegir una cantidad vacia
+    //si no armamos un array de objetos
    if (jugoselecionado==='Elige...'||cantidad==='') {
      console.log('salta un error de tienes que poner cantidad y elegir el jugo')
    }else{
@@ -111,36 +41,63 @@ formulario_carrito.addEventListener('click', e=>{
       CantidadElementos:1
     }
 
+  
+    //aqui validamos si existe uno igual en el carrito, solo aumentamos la cantidad
     if (carrito.hasOwnProperty(compra.id)) {
       compra.cantidad = carrito[compra.id].cantidad + parseInt(cantidad) 
     }
 
+    //hacemos una copia del array de arriba y lo metemos en este array inisializados con su id
+    //hacemos un objetos de objetos, tenemos el objeto principal que almacenara los otos objetos
     carrito[compra.id] = { ...compra }
-
+    
+    //pintamos el carrioto, mientra se valla comprando
     PintarElementosCarritos();
    }
-    //console.log(carrito);
+   
     }
   }
-    //e.stopPropagation()
-    //console.log(e.target.classList.contains('btn-outline-light'));
-  
+   // construimois la funcion para pintar lo que se compra
     const PintarElementosCarritos =() =>{
       console.log(carrito)
       Ulista.innerHTML=' ';
       Object.values(carrito).forEach(items =>{
         templetaLista.querySelector('h6').textContent = items.Jugo
         templetaLista.querySelector('span').textContent = items.cantidad
+        templetaLista.querySelector('button').dataset.id = items.id
 
+        //usamos uso de un template y fragment, muy practico todo
         const clone = templetaLista.cloneNode(true);
         fragment.appendChild(clone)
       });
       Ulista.appendChild(fragment);
-    }
-  
- 
-/*document.addEventListener('DOMContentLoaded', e=>{
- console.log("cargo el documento")
- addcarrito();
-})*/
 
+      //mientras se valla anadendo los objeto en el array esto lo cuenta y lo pinta en el html
+      const nElementos = Object.values(carrito).length
+      elnumerito.innerText=nElementos
+      
+    }
+
+
+//construimos la funcion eliminar un elemnto
+//cogemos el click que escuchamos, para que entre en el if
+//con el mismo eventos accedemos a su html y obtenemos lo que queremos en este caso su dataset
+// que contien su id y eliminamos ese objeto que esta dentro del array de objeros
+const EliminarElemento = e =>{
+ 
+  if (e.target.classList.contains('btn-close')) {
+    const idbutton = e.target.dataset.id
+    console.log(idbutton);
+    if (carrito.hasOwnProperty(idbutton)) {
+      console.log("se va a eliminar")
+
+      delete carrito[idbutton]
+
+      //pintamos el carriot para uqe se actualise la lista
+      PintarElementosCarritos();
+    }
+   
+   
+
+  }
+}
