@@ -5,13 +5,31 @@ const Ulista = document.getElementById('listaJugo');
 const templetaLista = document.getElementById('template-Lista').content
 const fragment = document.createDocumentFragment()
 const elnumerito = document.getElementById('span_de_cantidad')
+const eltotal = document.getElementById('total')
 let carrito={}
 const formulario_carrito = document.getElementById('FormularioJugo');
+const seleccionar = document.getElementById('seleccionar')
 
 //usamos el evento de escucha y le pasomos el evento a los metodos
 formulario_carrito.addEventListener('click', e=>{addcarrito(e) });
 
 Ulista.addEventListener('click', e=>{EliminarElemento(e)} );
+
+seleccionar.addEventListener('click', e=>{SeleccionProducto(e)});
+
+const SeleccionProducto = e => {
+
+  if (e.target.classList.contains('btn-outline-primary')) {
+    //const nombre = seleccionar.querySelector('button').dataset.id;
+  const select = document.getElementById('validationCustom04')  
+  select.options[select.selectedIndex].text = e.target.dataset.id
+  
+   console.log(e.target.dataset.id);
+  }
+  
+  
+  
+}
 
 //funcion de anadir el carrito
  const addcarrito = e =>{
@@ -76,6 +94,10 @@ Ulista.addEventListener('click', e=>{EliminarElemento(e)} );
       const nElementos = Object.values(carrito).length
       elnumerito.innerText=nElementos
       
+      const totalPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc +cantidad*precio, 0)
+      //console.log(totalPrecio)
+      eltotal.innerText="$"+totalPrecio
+
     }
 
 
@@ -101,3 +123,5 @@ const EliminarElemento = e =>{
 
   }
 }
+
+

@@ -97,14 +97,14 @@
       <p class="fs-5 text-muted">Elige y pide tu jugo al mejor precio</p>
     </div>
 
-    <main>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+<main>
+      <div id="seleccionar" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 
         {{-- se pintan todos los productos en la paginas con php --}}
         @foreach ($jugos as $item)
             
         
-        <div class="col">
+        <div  class="col">
           <div class="card mb-4 rounded-3 shadow-sm border-primary">
             <div class="card-header py-3 text-white bg-primary border-primary">
               <h4 class="my-0 fw-normal">{{$item->nombre_p}}</h4>
@@ -116,7 +116,7 @@
                   {{$item->descripcion_p}}
                 </p>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-primary">SELECCIONAR</button>
+              <a href="#pide"><button type="button"  id="{{$item->nombre_p}}" data-id="{{$item->nombre_p}}" class="w-100 btn btn-lg btn-outline-primary">SELECCIONAR</button></a>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@
         {{-- fin de la pintura --}}
       </div>
 
-      <h2 class="display-6 text-center mb-4">Pide Tus Jugos</h2>
+      <h2 class="display-6 text-center mb-4">Pide Tus Jugos</h2><a name="pide" target="_blank" rel="noopener noreferrer"></a>
 
 
       <div class="row align-items-md-stretch justify-content-center">
@@ -177,27 +177,24 @@
                 <span id="span_de_cantidad" class="badge bg-primary rounded-pill">0</span>
               </h4>
               <ul id="listaJugo" class="list-group mb-3">
-{{--  los jugos anadidos --}}
+               {{--  los jugos anadidos --}}
               </ul>
               {{-- Total de los jugos --}}
               <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between">
                   <span>Total (DO)</span>
-                  <strong>$0</strong>
+                  <strong id="total">$0</strong>
                 </li>
               </ul>
             </div>
             {{-- vista de los jugos anadidos FON--}}
 
-            <button class="btn btn-outline-light" type="button">Example button</button>
+            <button class="btn btn-outline-light" type="button">COMPLETAR COMPRA</button>
           </div>
         </div>
       </div>
-
-
-
   </div>
-
+</main>
 <template id="template-Lista" >
   <li name="lista" id="lista_`+lista+`" class="list-group-item d-flex justify-content-between lh-sm">
     <div>
@@ -211,7 +208,7 @@
     
     </li> 
 </template>
-  </main>
+
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
