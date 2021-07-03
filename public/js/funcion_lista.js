@@ -17,6 +17,8 @@ Ulista.addEventListener('click', e=>{EliminarElemento(e)} );
 
 seleccionar.addEventListener('click', e=>{SeleccionProducto(e)});
 
+
+
 const SeleccionProducto = e => {
 
   if (e.target.classList.contains('btn-outline-primary')) {
@@ -26,8 +28,6 @@ const SeleccionProducto = e => {
   
    console.log(e.target.dataset.id);
   }
-  
-  
   
 }
 
@@ -75,6 +75,15 @@ const SeleccionProducto = e => {
    
     }
   }
+
+  document.addEventListener('DOMContentLoaded', e =>{
+   
+    if (localStorage.getItem('carrito')) {
+      carrito = JSON.parse(localStorage.getItem('carrito'))
+      PintarElementosCarritos();
+      
+    }
+  });
    // construimois la funcion para pintar lo que se compra
     const PintarElementosCarritos =() =>{
       console.log(carrito)
@@ -90,6 +99,10 @@ const SeleccionProducto = e => {
       });
       Ulista.appendChild(fragment);
 
+ localStorage.setItem('carrito', JSON.stringify(carrito))
+ var arrayJsonCarrito=JSON.stringify(carrito);
+const losdatos = document.getElementById('eljson');
+losdatos.value = arrayJsonCarrito
       //mientras se valla anadendo los objeto en el array esto lo cuenta y lo pinta en el html
       const nElementos = Object.values(carrito).length
       elnumerito.innerText=nElementos
@@ -99,6 +112,8 @@ const SeleccionProducto = e => {
       eltotal.innerText="$"+totalPrecio
 
     }
+
+    
 
 
 //construimos la funcion eliminar un elemnto
@@ -118,10 +133,17 @@ const EliminarElemento = e =>{
       //pintamos el carriot para uqe se actualise la lista
       PintarElementosCarritos();
     }
-   
-   
 
   }
 }
+
+
+  
+
+
+
+
+
+
 
 

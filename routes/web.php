@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RolesController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::resource('/', 'App\Http\Controllers\JugosController');
+
+Route::resource('pedidos', 'App\Http\Controllers\PedidosController');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

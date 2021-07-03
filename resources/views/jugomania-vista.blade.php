@@ -13,7 +13,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <!-- Bootstrap core CSS -->
   
@@ -101,7 +100,7 @@
       <div id="seleccionar" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 
         {{-- se pintan todos los productos en la paginas con php --}}
-        @foreach ($jugos as $item)
+        @foreach ($jugos ?? '' as $item)
             
         
         <div  class="col">
@@ -142,7 +141,7 @@
                   <select name="validationCustom04" class="form-select" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
                     {{-- se llenan las opciones con php --}}
-                    @foreach ($jugos as $item)
+                    @foreach ($jugos ?? '' as $item)
                     <option value="{{$item->precio_p}}/{{ $item->id }}">{{$item->nombre_p}}</option>    
                     @endforeach
                     
@@ -171,6 +170,8 @@
 
 
             {{-- vista de los jugos anadidos --}}
+            <form id="FormularioPost" action="pedidos" method="POST">
+              @csrf
             <div class="col-md-12">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-primary">Tus Jugos seleccionados</span>
@@ -178,6 +179,20 @@
               </h4>
               <ul id="listaJugo" class="list-group mb-3">
                {{--  los jugos anadidos --}}
+               <template id="template-Lista" >
+                <li name="lista" id="lista_`+lista+`" class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 id="`+jugoselecionado+`" class="my-0">`+jugoselecionado+`</h6>
+                    <button type="button" id="eliminar" class="btn-close" aria-label="Close"></button>
+                   
+                  </div>
+                  
+                  <span  class="text-muted">`+cantidad+`</span>
+                  <input type="hidden" name="lacantidad" id="lacantidad" value="`+cantidad+`" />
+                  
+                  </li> 
+              </template>
+
               </ul>
               {{-- Total de los jugos --}}
               <ul class="list-group mb-3">
@@ -188,27 +203,14 @@
               </ul>
             </div>
             {{-- vista de los jugos anadidos FON--}}
-
-            <button class="btn btn-outline-light" type="button">COMPLETAR COMPRA</button>
+<input type="hidden" name="eljson" id="eljson">
+            <button class="btn btn-outline-light" onclick="vaciar();" type="submit" name="comprar" id="comprar">COMPLETAR COMPRA</button>
+          </form>
           </div>
         </div>
       </div>
   </div>
 </main>
-<template id="template-Lista" >
-  <li name="lista" id="lista_`+lista+`" class="list-group-item d-flex justify-content-between lh-sm">
-    <div>
-      <h6 id="`+jugoselecionado+`" class="my-0">`+jugoselecionado+`</h6>
-      <button type="button" id="eliminar" class="btn-close" aria-label="Close"></button>
-     
-    </div>
-    
-    <span  class="text-muted">`+cantidad+`</span>
-    <input type="hidden" id="lacantidad" value="`+cantidad+`" />
-    
-    </li> 
-</template>
-
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
